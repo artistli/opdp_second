@@ -22,7 +22,7 @@ def init_app(config_name):
     settings.global_config = Config
     app = FastAPI(title=Config.TITLE_NAME, description=Config.DESCRIPTION, version=Config.LATEST_VERSION, openapi_url=Config.OPEN_API_URL)
 
-    app.mount("/%s" % (Config.STATIC_NAME), StaticFiles(directory=Config.STATIC_FOLDER), name=Config.STATIC_NAME)
+    # app.mount("/%s" % (Config.STATIC_NAME), StaticFiles(directory=Config.STATIC_FOLDER), name=Config.STATIC_NAME)
 
     register_exception(app)
     from src.router.routers import router
